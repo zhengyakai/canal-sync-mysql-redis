@@ -39,8 +39,8 @@ public class DeleteHandler extends AbstractHandler {
                             rowData.getBeforeColumnsList().forEach(column -> {
                                 if("id".equals(column.getName())){
                                     //清除 redis 缓存
-                                    redisUtil.del("blog:"+column.getValue());
                                     log.info("清除 Redis 缓存 key={} 成功!\r\n","blog:"+column.getValue());
+                                    redisUtil.del("blog:"+column.getValue());
                                 }
                             });
                         });

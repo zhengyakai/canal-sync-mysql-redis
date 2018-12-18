@@ -1,25 +1,25 @@
 spring:
   application:
     name: cannal-sync-redis
-  datasource:
-    #使用springboot2.0后内置的HikariCP
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8
-    username: yakai
-    password: Yakai2018@
-    type: com.zaxxer.hikari.HikariDataSource
-    hikari:
-      minimum-idle: 5
-      maximum-pool-size: 15
-      auto-commit: true
-      idle-timeout: 30000
-      pool-name: HikariCP
-      max-lifetime: 1800000
-      connection-timeout: 30000
-      connection-test-query: SELECT 1
+#  datasource:
+#    #使用springboot2.0后内置的HikariCP
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://58.87.67.162:3306/test?useUnicode=true&characterEncoding=UTF-8
+#    username: yakai
+#    password: Yakai2018@
+#    type: com.zaxxer.hikari.HikariDataSource
+#    hikari:
+#      minimum-idle: 5
+#      maximum-pool-size: 15
+#      auto-commit: true
+#      idle-timeout: 30000
+#      pool-name: HikariCP
+#      max-lifetime: 1800000
+#      connection-timeout: 30000
+#      connection-test-query: SELECT 1
   #Redis配置
   redis:
-    host: localhost
+    host: 58.87.67.162
     port: 7000
     password: Yakai2018@
     database: 0
@@ -36,9 +36,9 @@ spring:
 
 
 
-mybatis:
-  mapper-locations: classpath:sqlmap/*.xml
-  type-aliases-package: cn.zhengyk.sync.model
+#mybatis:
+#  mapper-locations: classpath:sqlmap/*.xml
+#  type-aliases-package: cn.zhengyk.sync.model
 
 # canal相关配置
 canal:

@@ -43,8 +43,8 @@ public class InsertHandler extends AbstractHandler{
                             Map<String, Object> map = columnsToMap(afterColumnsList);
                             String id = (String) map.get("id");
                             String jsonStr = JSONObject.toJSONString(map);
-                            redisUtil.setDefault("blog:"+id, jsonStr);
                             log.info("新增的数据：{}\r\n",jsonStr);
+                            redisUtil.setDefault("blog:"+id, jsonStr);
                         });
                     });
         }else{
