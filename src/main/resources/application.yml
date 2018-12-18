@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: cannal-sync-redis
+  profiles:
+    active: dev
+server:
+  port: 22222
+
+
