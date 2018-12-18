@@ -35,8 +35,8 @@ public class InsertHandler extends AbstractHandler{
         rowChange.getRowDatasList().forEach(rowData -> {
             //每一行的每列数据  字段名->值
             List<Column> afterColumnsList = rowData.getAfterColumnsList();
-            Map<String, Object> map = columnsToMap(afterColumnsList);
-            String id = (String) map.get("id");
+            Map<String, String> map = super.columnsToMap(afterColumnsList);
+            String id = map.get("id");
             String jsonStr = JSONObject.toJSONString(map);
             log.info("新增的数据：{}\r\n",jsonStr);
             redisUtil.setDefault("blog:"+id, jsonStr);

@@ -30,12 +30,12 @@ public class UpdateHandler extends AbstractHandler {
         rowChange.getRowDatasList().forEach(rowData -> {
             //每一行的每列数据  字段名->值
             List<Column> beforeColumnsList = rowData.getBeforeColumnsList();
-            Map<String, Object> beforeMap = super.columnsToMap(beforeColumnsList);
+            Map<String, String> beforeMap = super.columnsToMap(beforeColumnsList);
             log.info("更新前数据：{}",JSONObject.toJSONString(beforeMap));
 
             List<Column> afterColumnsList = rowData.getAfterColumnsList();
-            Map<String, Object> afterMap = super.columnsToMap(afterColumnsList);
-            String id = (String) afterMap.get("id");
+            Map<String, String> afterMap = super.columnsToMap(afterColumnsList);
+            String id = afterMap.get("id");
             String afterJsonStr = JSONObject.toJSONString(afterMap);
             log.info("更新后数据：{}\r\n",afterJsonStr);
             /**
