@@ -48,7 +48,8 @@ canal:
   username:
   password:
   subscribe: test.blog
-# subscribe 概述
+  batchSize: 1000
+# subscribe 过滤规则
 # 1）  所有：.*   or  .*\\..*
 # 2）  "test"库下所有表： test\\..*
 # 3）  "test"下的以"sys"打头的表：test\\.sys.*

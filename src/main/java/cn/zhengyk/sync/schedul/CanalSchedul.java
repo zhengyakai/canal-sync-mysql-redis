@@ -7,6 +7,7 @@ import com.alibaba.otter.canal.protocol.CanalEntry.EntryType;
 import com.alibaba.otter.canal.protocol.Message;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -29,10 +30,12 @@ public class CanalSchedul{
     @Autowired
     private InsertHandler insertHandler;
 
+    @Value("${canal.batchSize}")
+    private int batchSize;
+
     @Async("canal")
     @Scheduled(fixedDelay = 200)  //每200毫秒拉取一次数据
     public void run() {
-        int batchSize = 1000;
         try {
             Message message = canalConnector.getWithoutAck(batchSize);
             long batchId = message.getId();
