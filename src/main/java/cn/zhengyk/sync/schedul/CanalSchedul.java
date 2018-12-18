@@ -35,7 +35,7 @@ public class CanalSchedul{
 
     @Async("canal")
     @Scheduled(fixedDelay = 200)  //每200毫秒拉取一次数据
-    public void run() {
+    public void fetch() {
         try {
             Message message = canalConnector.getWithoutAck(batchSize);
             long batchId = message.getId();
