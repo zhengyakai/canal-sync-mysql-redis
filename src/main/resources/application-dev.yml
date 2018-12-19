@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: cannal-sync-redis
 #  datasource:
 #    #使用springboot2.0后内置的HikariCP
 #    driver-class-name: com.mysql.jdbc.Driver
