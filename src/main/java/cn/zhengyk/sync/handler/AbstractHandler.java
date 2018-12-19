@@ -42,9 +42,9 @@ public abstract class AbstractHandler {
      */
     public void handleMessage(Entry entry){
         if(this.eventType == entry.getHeader().getEventType()){
-            //发生 update 操作的库名
+            //发生写入操作的库名
             String database = entry.getHeader().getSchemaName();
-            //发生 update 操作的表名
+            //发生写入操作的表名
             String table = entry.getHeader().getTableName();
             log.info("监听到数据库：{}，表：{} 的 {} 事件",database,table, eventType.toString());
             //如果 rowChange 不为空,则执行 handleRowChange()

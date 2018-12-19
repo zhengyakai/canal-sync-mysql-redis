@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author: Yakai Zheng（zhengyk@cloud-young.com）
  * @date: Created on 2018/12/18
- * @description:
+ * @description:  监听到数据库删除操作后执行的逻辑
  * @version: 1.0
  */
 @Slf4j
