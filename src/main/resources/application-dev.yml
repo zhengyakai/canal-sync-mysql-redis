@@ -4,7 +4,7 @@ spring:
 #  datasource:
 #    #使用springboot2.0后内置的HikariCP
 #    driver-class-name: com.mysql.jdbc.Driver
-#    url: jdbc:mysql://58.87.67.162:3306/test?useUnicode=true&characterEncoding=UTF-8
+#    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8
 #    username: yakai
 #    password: Yakai2018@
 #    type: com.zaxxer.hikari.HikariDataSource
@@ -19,7 +19,7 @@ spring:
 #      connection-test-query: SELECT 1
   #Redis配置
   redis:
-    host: 58.87.67.162
+    host: localhost
     port: 7000
     password: Yakai2018@
     database: 0
@@ -42,7 +42,7 @@ spring:
 
 # canal相关配置
 canal:
-  host: 127.0.0.1
+  host: localhost
   port: 11111
   destination: example
   username:
