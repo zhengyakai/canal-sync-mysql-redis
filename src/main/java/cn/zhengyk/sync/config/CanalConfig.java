@@ -3,13 +3,11 @@ package cn.zhengyk.sync.config;
 import com.alibaba.otter.canal.client.CanalConnector;
 import com.alibaba.otter.canal.client.CanalConnectors;
 import com.google.common.collect.Lists;
-import lombok.Data;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import java.net.InetSocketAddress;
 
@@ -21,7 +19,7 @@ import java.net.InetSocketAddress;
  */
 @Slf4j
 @Setter
-@Configuration
+@Component
 @ConfigurationProperties("canal")
 public class CanalConfig {
 
